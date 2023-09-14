@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classification</title>
+    <link rel="stylesheet" href="/home/gaurav_8412/ML/project_final/static/builtin/Tumblr.jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        h1, h2 {
+            text-align: center;
+        }
+
+        #kkk{
+            text-align: right;
+        }
+        .container {
+           margin-top: 50px;
+        }
+        body {
+            background-image: url('/home/gaurav_8412/ML/project_final/static/builtin/Tumblr.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f8f9fa;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form select, form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        form .mb-3 {
+            margin-bottom: 20px;
+            color:rgba(255,0,0)
+        }
+
+        form button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        h1 {
+            color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Airline Service Satisfaction Predictor</h1>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form action="/predict" method="POST">
+                    <div class="mb-3">
+                        <label for="">Age:</label>
+                        <input type="text" name="age" class="form-control">
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Type_of_Travel</label>
+                         <select name="Type_of_Travel" class="">
+                            <option value="1">Personal Travel</option>
+                            <option value="0">Business Travel</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Customer_Class:</label>
+                        <select name="Customer_Class" class="">
+                            <option value="1">Economy</option>
+                            <option value="0">Business</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Flight_Distance</label>
+                        <input type="text" name="Flight_Distance" class="form-control">
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Inflight_Wifi_Service</label>
+                        <select name="Inflight_Wifi_Service" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Ease_of_Online_Booking</label>
+                         <select name="Ease_of_Online_Booking" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Online_Boarding</label>
+                         <select name="Online_Boarding" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Seat_Comfort</label>
+                         <select name="Seat_Comfort" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Inflight_Entertainment</label>
+                         <select name="Inflight_Entertainment" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Onboard_Service</label>
+                         <select name="Onboard_Service" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Leg_room_service</label>
+                          <select name="leg_room_service" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Cleanliness</label>
+                          <select name="cleanliness" class="">
+                            <option value="1">1 Rating</option>
+                            <option value="2">2 Rating</option>
+                            <option value="3">3 Rating</option>
+                            <option value="4">4 Rating</option>
+                            <option value="5">5 Rating</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">predict</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+    </div>
+</body>
+</html>
+
